@@ -25,19 +25,61 @@
 
 
 //Question 4
-class Item{
-    itemid:number;
-    itemname:string;
-    itemprice:number;
-    category:string;
-    constructor(ItemId:number,ItemName:string,ItemPrice:number,Category:string){
-        this.itemid=ItemId;
-        this.itemname=ItemName;
-        this.itemprice=ItemPrice;
-        this.category=Category;
-        console.log(this.itemid,this.itemname,this.itemprice,this.category);
+// class Item{
+//     itemid:number;
+//     itemname:string;
+//     itemprice:number;
+//     category:string;
+//     constructor(ItemId:number,ItemName:string,ItemPrice:number,Category:string){
+//         this.itemid=ItemId;
+//         this.itemname=ItemName;
+//         this.itemprice=ItemPrice;
+//         this.category=Category;
+//         console.log(this.itemid,this.itemname,this.itemprice,this.category);
+//     }
+// }
+
+// var a = new Item(1,"pen",120,"stationery");
+// console.log(a);
+
+
+//Question 5
+interface shape{
+    shapeName:string;
+    printName:()=>void;
+}
+class Cone implements shape{
+    shapeName: string;
+    constructor(shapename:string){
+        this.shapeName=shapename;
+    }
+    printName (): void {
+        console.log(this.shapeName+" Area");
     }
 }
 
-var a = new Item(1,"pen",120,"stationery");
-console.log(a);
+class Sphere implements shape{
+    shapeName: string;
+    constructor(shapename:string){
+        this.shapeName=shapename;
+    }
+    printName (): void {
+        console.log(this.shapeName+" Area");
+    }
+}
+
+class Rectangle implements shape{
+    shapeName: string;
+    constructor(shapename:string){
+        this.shapeName=shapename;
+    }
+    printName (): void {
+        console.log(this.shapeName+" Area");
+    }
+}
+var con = new Cone("Cone");
+var sph = new Sphere("Sphere");
+var rec = new Rectangle("Rectangle");
+con.printName();
+sph.printName();
+rec.printName();
